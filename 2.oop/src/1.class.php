@@ -247,51 +247,51 @@
 
 // -- Singleton --
 
-class Database
-{
-  private static $instances = [];
-
-  protected function __construct() {}
-
-  public static function getInstance() {
-    $class = static::class;       // Получение вызвавшего класса
-
-    if (! isset(self::$instances[$class])) {
-      self::$instances[$class] = new static();
-    }
-
-    return self::$instances[$class];
-  }
-}
-
-class MySQLDatabase extends Database {}
-class PostgresQLDatabase extends Database {}
-
-$mysql = MySQLDatabase::getInstance();
-$pgsql = PostgresQLDatabase::getInstance();
+//class Database
+//{
+//  private static $instances = [];
+//
+//  protected function __construct() {}
+//
+//  public static function getInstance() {
+//    $class = static::class;       // Получение вызвавшего класса
+//
+//    if (! isset(self::$instances[$class])) {
+//      self::$instances[$class] = new static();
+//    }
+//
+//    return self::$instances[$class];
+//  }
+//}
+//
+//class MySQLDatabase extends Database {}
+//class PostgresQLDatabase extends Database {}
+//
+//$mysql = MySQLDatabase::getInstance();
+//$pgsql = PostgresQLDatabase::getInstance();
 
 
 
 // ---- fabric ------
 
-class Model {
-  public static function create($data): static
-  {
-    $instance = new static();
-
-    foreach ($data as $key => $value) {
-      $instance->{$key} = $value;
-    }
-
-    return $instance;
-  }
-}
-
-class User extends Model {}
-class Post extends Model {}
-
-$user = User::create(['name' => 'Vasia']);
-$post = Post::create(['title' => 'Hello']);
+//class Model {
+//  public static function create($data): static
+//  {
+//    $instance = new static();
+//
+//    foreach ($data as $key => $value) {
+//      $instance->{$key} = $value;
+//    }
+//
+//    return $instance;
+//  }
+//}
+//
+//class User extends Model {}
+//class Post extends Model {}
+//
+//$user = User::create(['name' => 'Vasia']);
+//$post = Post::create(['title' => 'Hello']);
 
 
 
